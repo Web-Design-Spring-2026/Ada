@@ -1,0 +1,22 @@
+.galary {
+  display: flex;
+  justify-content: center; /* centers images horizontally */
+  align-items: center; /* centers images vertically */
+  gap: 10px; /* adds space between images */
+}
+.galary {
+  width: 200px;
+  height: 200px; /* or use aspect-ratio: 1; for a 1:1 ratio */
+  overflow: hidden; /* hides the cropped parts */
+}
+
+.galary {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.galary {
+  border: 1px solid black; /* Adds a border to each item */
+  padding: 10px;
+  text-align: center;
+}
