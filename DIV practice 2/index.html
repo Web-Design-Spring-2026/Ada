@@ -1,0 +1,101 @@
+<style type="text/css">
+  .background {
+    background: lightgrey;
+  }
+  .head {
+    background: light purple;
+      .duck-head 
+  /* Basic head shape (circle/oval) */
+  width: 100px;
+  height: 90px;
+  background-color: #FFC300; /* Duck yellow color */
+  border-radius: 50%; /* Makes it a circle */
+  position: relative; /* Needed for positioning pseudo-elements */
+  border: 2px solid #000;
+}
+
+/* Eye using a pseudo-element */
+.duck-head::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 25px;
+  right: 25px;
+}
+
+/* Beak using a pseudo-element */
+.duck-head::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  background-color: #FF5733; /* Orange for the beak */
+  border-radius: 0 100% 100% 0 / 50%; /* Shapes the beak */
+  top: 40px;
+  right: -10px; /* Position it outside the main head div */
+  border: 1px solid #000;
+}
+  }
+  .eyeball {
+    background: white;
+    border-color: black;
+   
+  position: absolute; /* Position relative to the duck's head container */
+  top: 50px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
+}
+
+/* The outer part of the eye */
+.eye {
+  width: 30px;
+  height: 30px;
+  background-color: #fff; /* White part */
+  border-radius: 50%;
+  border: 1px solid #000; /* Optional border */
+  position: relative;
+  overflow: hidden; /* Keeps the pupil inside the eye bounds */
+}
+
+/* The pupil */
+
+  }
+  .pupil {
+   color:black
+       .pupil {
+  width: 15px;
+  height: 15px;
+  background-color: #000; /* Black center */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the pupil perfectly */
+
+  }
+  .beak {
+    color:orange;
+  }
+  .body {
+    color:light purple;
+  }
+  .wing {
+   color:purple;
+
+  }
+</style>
+
+<div class="duck-container">
+  <div class="duck-body">
+      
+    <div class="duck-wing"></div>
+    <div class="duck-head">
+      <div class="duck-eye">
+        <div class="duck-pupil"></div>
+      </div>
+      <div class="duck-bill"></div>
+    </div>
+  </div>
+</div>
