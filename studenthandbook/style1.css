@@ -1,0 +1,59 @@
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.red{
+  background-color: white;
+   color:indianred;
+   border: 5px outset indianred;
+   border-right-color: transparent;
+
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+.orange{
+  background-color: blueviolet;
+   color: black;
+   border: 5px outset black;
+   border-right-color: transparent;
+ 
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yellow{
+  background-color: orange;
+   color: darkgoldenrod;
+   border: 5px outset darkgoldenrod;
+   border-right-color: transparent;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.green{
+  background-color:green;
+   color:palegoldenrod;
+   border: 5px outset palegoldenrod;
+   border-right-color: transparent;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.blue{
+  background-color: red;
+   color: whitesmoke;
+   border: 5px outset whitesmoke;
+   border-right-color: transparent;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+}

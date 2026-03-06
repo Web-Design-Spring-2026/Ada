@@ -1,0 +1,34 @@
+body {
+   background-color: cornflowerblue;
+   color: white;
+
+ }
+
+ .paragraph {
+   margin: 30px;
+   padding: 10px;
+   background-color: #61dbac;
+   color: brown;
+   border-radius: 15px;
+   border: solid 0.3em gold;
+   border-right-color: red;
+   width: auto;
+
+ }
+
+ .group1 {
+   background-color: black;
+   color: #647baf;
+   border: 5px outset #345f11;
+   border-right-color: transparent;
+
+ }
+
+ .group2 {
+   background-image: url("sunflower.png");
+   height: 150px;
+   width: 100%;
+   border: 5px outset orangered;
+   font-size: 30px;
+
+ }
