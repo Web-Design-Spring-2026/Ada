@@ -1,0 +1,53 @@
+body{
+  width:200vw;
+  height:70vh;
+  //background: conic-gradient(black, gray, dark grey, pink);
+  background:#003366;
+  background:radial-gradient(white, silver);
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.enclose{
+  width:110vw;
+  height:50vw;
+  border-radius: 50%;
+  animation: spin 10s linear 2s infinite;
+  align-self:center;
+  display:flex;
+  align-content:center;
+  justify-content:center;
+}
+.box{
+  background: conic-gradient(black, grey, whitr);
+  width:97%;
+  height:97%;
+  //border:1px solid white;
+  border-radius: 80%;
+  align-self:center;
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  transform: rotate(1deg);
+  animation: spin 30s linear 1s infinite;
+}
+.last{
+  //width:80%;
+  //height:80%;
+  background:radial-gradient(white, silver);
+  opacity:0;
+  animation: fadeIn 1s ease 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+    100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:105;}
+}
+
