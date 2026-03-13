@@ -1,0 +1,54 @@
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  animation: party-time 0.6s steps(1) infinite; /* Faster, "strobe" color changes */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  perspective: 1000px; /* Adds depth for the dance moves */
+}
+
+@keyframes party-time {
+  0%   { background-color: #F9C80E; }
+  20%  { background-color: #F86624; }
+  40%  { background-color: #EA3546; }
+  60%  { background-color: #662E9B; }
+  80%  { background-color: #43BCCD; }
+  100% { background-color: #F9C80E; }
+}
+
+@keyframes dancing-body {
+  0%   { transform: translateY(0) rotate(0deg) skew(0deg) scale(1); }
+  25%  { transform: translateY(-30px) rotate(-8deg) skew(-5deg) scale(1.1); }
+  50%  { transform: translateY(0) rotate(0deg) skew(0deg) scale(1.05); }
+  75%  { transform: translateY(-30px) rotate(8deg) skew(5deg) scale(1.1); }
+  100% { transform: translateY(0) rotate(0deg) skew(0deg) scale(1); }
+}
+
+p {
+  font-size: clamp(40px, 15vw, 150px); /* Responsive font size */
+  font-weight: 950; /* Extra chunky for better GIF visibility */
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  
+  /* Background GIF Logic */
+  background-image: url(https://i.gifer.com/7Uz.gif);
+  background-size: 200% auto; /* Zoomed in so the GIF movement is more chaotic */
+  background-position: center;
+  
+  /* Modern Text Clipping */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+
+  /* The Dance */
+  animation: dancing-body 0.45s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Makes the text pop against the changing colors */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  will-change: transform; /* Smoother animation performance */
+}
