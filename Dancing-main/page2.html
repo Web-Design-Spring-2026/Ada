@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Puppet</title>
+    <style>
+        /* Stack text and puppet vertically */
+        body {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a2e; /* Deep dark blue */
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #00d4ff;
+            font-family: sans-serif;
+            margin-bottom: 50px;
+        }
+
+        /* The main container */
+        .puppet {
+            position: relative;
+            width: 100px;
+            height: 300px;
+            animation: body-bob 0.5s ease-in-out infinite alternate; 
+        }
+
+        .part {
+            position: absolute;
+            background-color: #e94560; /* Vibrant pink/red */
+            border-radius: 10px;
+        }
+
+        /* Adjusted Head: Bigger, new color, and different radius */
+        .head {
+            width: 90px;
+            height: 90px;
+            background-color: #00d4ff; 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Funky organic shape */
+            top: -95px;
+            left: 5px;
+            z-index: 3;
+            border: 3px solid white;
+        }
+
+        .torso {
+            width: 100px;
+            height: 120px;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #16213e;
+            border: 2px solid #e94560;
+        }
+
+        /* --- ARMS --- */
+        .arm {
+            width: 12px;
+            height: 70px;
+            top: 10px;
+            transform-origin: top center; 
+        }
+
+        /* Top Arms */
+        .left-arm-1 { left: -15px; animation: swing-forward 0.4s ease-in-out infinite alternate; }
+        .right-arm-1 { left: 105px; animation: swing-backward 0.4s ease-in-out infinite alternate; }
+    
+        /* --- LEGS --- */
+        .leg {
+            width: 15px;
+            height: 80px;
+            top: 120px;
+            transform-origin: top center; 
+        }
+
+        /* Inner Legs */
+        .left-leg-1 { left: 20px; animation: swing-backward 0.4s ease-in-out infinite alternate; }
+        .right-leg-1 { left: 65px; animation: swing-forward 0.4s ease-in-out infinite alternate; }
+        
+        /* --- THE CHOREOGRAPHY --- */
+        @keyframes swing-forward {
+            0% { transform: rotate(-60deg); }
+            100% { transform: rotate(20deg); }
+        }
+
+        @keyframes swing-backward {
+            0% { transform: rotate(60deg); }
+            100% { transform: rotate(-20deg); }
+        }
+
+        @keyframes body-bob {
+            0% { transform: translateY(0) scaleX(1); }
+            100% { transform: translateY(20px) scaleX(1.05); } /* Squash and stretch */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hi, my name is ADA!!</h1>
+
+    <div class="puppet">
+        <div class="part head"></div>
+        <div class="part torso"></div>
+        
+        <div class="part arm left-arm-1"></div>
+        <div class="part arm right-arm-1"></div>
+    
+        
+        <div class="part leg left-leg-1"></div>
+        <div class="part leg right-leg-1"></div>
+ 
+    </div>
+
+</body>
+</html>

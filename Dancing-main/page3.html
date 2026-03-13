@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style3.css" />
+    <title>Dancing Articulated Puppet</title>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .puppet {
+            position: relative;
+            width: 100px;
+            height: 250px;
+            animation: body-bob 0.5s ease-in-out infinite alternate;
+        }
+
+        .part {
+            position: absolute;
+            border-radius: 10px;
+            transform-origin: top center; /* Joint hinge point */
+        }
+
+        /* --- HEAD & TORSO --- */
+        .head {
+            width: 50px;
+            height: 50px;
+            background-color: #FFC107;
+            border-radius: 50%;
+            top: 0;
+            left: 25px;
+            z-index: 2;
+        }
+
+        .torso {
+            width: 60px;
+            height: 90px;
+            background-color: #4CAF50;
+            top: 55px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        /* --- ARMS --- */
+        .upper-arm {
+            width: 16px;
+            height: 50px;
+            background-color: #FF5722;
+            top: 60px;
+            z-index: 0;
+        }
+
+        .lower-arm {
+            width: 16px;
+            height: 50px;
+            background-color: #E64A19;
+            top: 40px; 
+            left: 0;
+        }
+
+        .left-arm {
+            left: 5px;
+            animation: shoulder-swing-fwd 1s ease-in-out infinite alternate;
+        }
+        .left-arm .lower-arm {
+            animation: elbow-bend 1s ease-in-out infinite alternate;
+        }
+
+        .right-arm {
+            left: 79px; /* Adjusted to fit torso better */
+            animation: shoulder-swing-bwd 1s ease-in-out infinite alternate;
+        }
+        .right-arm .lower-arm {
+            animation: elbow-bend-alt 1s ease-in-out infinite alternate; 
+        }
+
+        /* --- LEGS --- */
+        .upper-leg {
+            width: 20px;
+            height: 55px;
+            background-color: #2196F3;
+            top: 140px;
+            z-index: 0;
+        }
+
+        .lower-leg {
+            width: 20px;
+            height: 55px;
+            background-color: #1976D2;
+            top: 45px;
+            left: 0;
+        }
+
+        .left-leg {
+            left: 25px;
+            animation: hip-swing-bwd 1s ease-in-out infinite alternate;
+        }
+        .left-leg .lower-leg {
+            animation: knee-bend 1s ease-in-out infinite alternate;
+        }
+
+        .right-leg {
+            left: 55px;
+            animation: hip-swing-fwd 1s ease-in-out infinite alternate;
+        }
+        .right-leg .lower-leg {
+            animation: knee-bend-alt 1s ease-in-out infinite alternate;
+        }
+
+        /* --- THE CHOREOGRAPHY --- */
+
+        /* Shoulders & Hips */
+        @keyframes shoulder-swing-fwd {
+            0% { transform: rotate(-60deg); }
+            100% { transform: rotate(30deg); }
+        }
+        @keyframes shoulder-swing-bwd {
+            0% { transform: rotate(30deg); }
+            100% { transform: rotate(-60deg); }
+        }
+        @keyframes hip-swing-fwd {
+            0% { transform: rotate(-30deg); }
+            100% { transform: rotate(30deg); }
+        }
+        @keyframes hip-swing-bwd {
+            0% { transform: rotate(30deg); }
+            100% { transform: rotate(-30deg); }
+        }
+
+        /* Elbows (Bend inwards) */
+        @keyframes elbow-bend {
+            0% { transform: rotate(-90deg); }
+            100% { transform: rotate(-20deg); }
+        }
+        @keyframes elbow-bend-alt {
+            0% { transform: rotate(-20deg); }
+            100% { transform: rotate(-90deg); }
+        }
+
+        /* Knees (Natural backward bend) */
+        @keyframes knee-bend {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(45deg); }
+        }
+        @keyframes knee-bend-alt {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Body bounce (Syncs with the steps) */
+        @keyframes body-bob {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="puppet">
+        <div class="part head"></div>
+        <div class="part torso"></div>
+        
+        <div class="part upper-arm left-arm">
+            <div class="part lower-arm"></div>
+        </div>
+
+        <div class="part upper-arm right-arm">
+            <div class="part lower-arm"></div>
+        </div>
+
+        <div class="part upper-leg left-leg">
+            <div class="part lower-leg"></div>
+        </div>
+
+        <div class="part upper-leg right-leg">
+            <div class="part lower-leg"></div>
+        </div>
+    </div>
+
+</body>
+</html>

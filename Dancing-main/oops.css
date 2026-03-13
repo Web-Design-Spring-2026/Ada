@@ -1,0 +1,48 @@
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* Background animation for the whole page */
+    animation: party-time 0.9s infinite linear;
+    margin: 0;
+    min-height: 100vh;
+}
+
+div {
+    height: 20px;
+    width: 100%; /* Changed from 250% to prevent unwanted horizontal scrolling */
+}
+
+@keyframes party-time {
+    0%   { background-color: #f9c80e; }
+    25%  { background-color: #f86624; }
+    50%  { background-color: #ea3546; }
+    75%  { background-color: #662e9b; }
+    100% { background-color: #43bccd; }
+}
+
+/* Updated to actually move the background */
+@keyframes dancing-time {
+    0%   { background-position: 0% center; }
+    50%  { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+p {
+    font-size: 80px;      /* Increased size so you can actually see the image clip */
+    line-height: 1.1;     /* 0.7 was cutting off the letters */
+    font-weight: 900;     /* Thicker font works better for background-clip */
+    
+    /* Image Clipping Logic */
+    background-image: url("https://pngimg.com/uploads/ghostface/ghostface_PNG28.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    /* The Magic Sauce */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animation */
+    animation: dancing-time 3s infinite ease-in-out;
+    transition: 0.4s ease-in-out;
+}
