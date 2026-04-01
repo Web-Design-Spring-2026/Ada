@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+  /* Define the 4 columns and 3 main rows */
+  grid-template-columns: 200px 1fr 1fr 1fr;
+  grid-template-rows: 80px 1fr 80px;
+    /*this is how you would do the code.  I will explain.*/
+  grid-template-areas:
+    "logo-t nav   nav   nav"   /* Row 1 */
+    "side   main  main  main"  /* Row 2 */
+    "side   foot  foot  logo-b";/* Row 3 */
+}
+
+
+/* Assigning the areas */
+.logo-top    { grid-area: logo-t; background: #ffb366; }
+.nav         { grid-area: nav;    background: #ffd11a; }
+.sidebar     { grid-area: side;   background: #a3c233; display: flex; flex-direction: column; gap: 10px; }
+.content     { grid-area: main;   background: #66a38c; display: flex; gap: 10px; padding: 20px; }
+.footer-left { grid-area: foot;   background: #7ca3d2; }
+.logo-bottom { grid-area: logo-b; background: #8592c3; }
+
+
+/* Styling the inner boxes (News, Events, First, Second, etc) */
+.box {
+  background: rgba(255, 255, 255, 0.2);
+  flex: 1; /* Makes boxes fill equal space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
