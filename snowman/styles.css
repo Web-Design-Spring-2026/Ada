@@ -1,0 +1,117 @@
+body {
+    background-color: #ccffff;
+    position: relative;
+}
+.snowman {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;                  
+}
+.belly {
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    top: 125px;
+    left: 50px;
+    border-radius: 50px;
+}
+.head {
+    position: absolute;
+    background-color: white;
+    width: 140px;
+    height: 140px;
+    top: 1px;
+    left: 80px;
+    border-radius: 50px;
+}
+
+.branch1 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 80px;
+    position: absolute;
+    top: 75px;
+    left: 260px;
+    border-radius: 50px;
+    transform: rotate(45deg);
+}
+.branch2 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 80px;
+    left: 265px;
+    border-radius: 50px;
+    transform: rotate(15deg);
+}
+.branch3 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 100px;
+    left: 275px;
+    border-radius: 50px;
+    transform: rotate(108deg);
+}
+
+.branch4 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 80px;
+    position: absolute;
+    top: 75px;
+    left: 30px;
+    border-radius: 50px;
+    transform: rotate(-45deg);
+}
+.branch5 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 80px;
+    left: 26px;
+    border-radius: 50px;
+    transform: rotate(-15deg);
+}
+.branch6 {
+    background-color: saddlebrown;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    border-radius: 50px;
+    transform: rotate(-108deg);
+}
+.eye1 {
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+}
+.eye2 {
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    top: 40px;
+    left: 160px;
+}
+.nose {
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    top: 70px;
+    left: 126px;
+}
