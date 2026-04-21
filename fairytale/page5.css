@@ -1,0 +1,53 @@
+h2 {
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.skull-top {
+  width: 150px;
+  height: 130px;
+  background: grey;
+  border-radius: 75px 75px 20px 20px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.eye {
+  width: 40px;
+  height: 40px;
+  background: black;
+  border-radius: 30%;
+  position: absolute;
+  top: 50px;
+}
+
+.left { left: 25px; }
+.right { right: 25px; }
+
+.nose {
+  width: 20px;
+  height: 20px;
+  background: black;
+border-radius: 0% ;
+  position: absolute;
+  bottom: 20px;
+  left: 65px;
+}
+
+.jaw {
+  width: 90px;
+  height: 40px;
+  background: grey;
+  margin: -10px auto 0;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.teeth {
+  width: 15px;
+  height: 45px;
+  background: #ccc;
+  border-radius: 3px;
+}

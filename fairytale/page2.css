@@ -1,0 +1,45 @@
+h2 {
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.character-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  padding: 50px;
+}
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffdbac;
+  margin-bottom: 5px;
+}
+.body {
+  width: 50px;
+  height: 80px;
+}
+
+.man .body {
+  background: #3498db;
+  border-radius: 5px 5px 0 0;
+}
+
+.woman .body {
+  background: #e74c3c;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+.ghost {
+  width: 100px;
+  height: 120px;
+  background: grey;
+  border-radius: 50px 50px 0 0;
+  position: relative;
+}
