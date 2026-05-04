@@ -1,0 +1,37 @@
+h1 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: darkred;
+}
+h2 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: darkred;
+}
+
+h3 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: darkred;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.text {
+  background-color: white;
+  border: solid;
+}
+.heading {
+  background-color: white;
+  border: solid;
+}
+.pictures {
+  border: solid;
+  width: fit-content;
+  margin: auto;
+}
