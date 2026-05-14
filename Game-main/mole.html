@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+         <link rel="stylesheet" href="mole.css" />
+    </head>
+    <body>
+    <input type="radio" id="mole-0"  name="mole-0" />
+<input type="radio" id="mole-1"  name="mole-1" />
+<input type="radio" id="mole-2"  name="mole-2" />
+<input type="radio" id="mole-3"  name="mole-3" />
+<input type="radio" id="mole-4"  name="mole-4" />
+<input type="radio" id="mole-5"  name="mole-5" />
+<input type="radio" id="mole-6"  name="mole-6" />
+<input type="radio" id="mole-7"  name="mole-7" />
+<input type="radio" id="mole-8"  name="mole-8" />
+<input type="radio" id="mole-9"  name="mole-9" />
+<input type="radio" id="mole-10" name="mole-10" />
+<input type="radio" id="mole-11" name="mole-11" />
+<input type="radio" id="mole-12" name="mole-12" />
+<input type="radio" id="mole-13" name="mole-13" />
+<input type="radio" id="mole-14" name="mole-14" />
+<input type="radio" id="mole-15" name="mole-15" />
+<input type="radio" id="mole-16" name="mole-16" />
+<input type="radio" id="mole-17" name="mole-17" />
+<input type="radio" id="mole-18" name="mole-18" />
+<input type="radio" id="mole-19" name="mole-19" />
+
+<div id="timer">Time left </div>
+<div id="moles" class="number">Moles whacked: </div>
+
+<div id="perspective">
+  <div id="canvas">
+    <div id="board">
+      <div>
+        <label for="mole-0"></label>
+        <label for="mole-9"></label>
+        <label for="mole-19"></label>
+      </div>
+      <div>
+        <label for="mole-7"></label>
+        <label for="mole-16"></label>
+      </div>
+      <div>
+        <label for="mole-2"></label>
+      </div>
+      <div>
+        <label for="mole-6"></label>
+        <label for="mole-10"></label>
+        <label for="mole-11"></label>
+      </div>
+      <div>
+        <label for="mole-8"></label>
+        <label for="mole-14"></label>
+        <label for="mole-18"></label>
+      </div>
+      <div>
+        <label for="mole-4"></label>
+        <label for="mole-12"></label>
+      </div>
+      <div>
+        <label for="mole-3"></label>
+        <label for="mole-15"></label>
+      </div>
+      <div>
+        <label for="mole-5"></label>
+        <label for="mole-17"></label>
+      </div>
+      <div>
+        <label for="mole-1"></label>
+        <label for="mole-13"></label>
+      </div>
+    </div>
+    <div id="title">CSS Whack-a-Mole</div>
+  </div>
+</div>
+
+<div id="results">
+  <h1>Game Over</h1>
+  <h2>You got <span class="number"></span> moles out of 20!</h2>
+  <h3>Thanks for playing!</h3>
+  <p>Reload the page to play again</p>
+</div>
+      <input type="radio" id="bomb-hit" name="bomb" />
+
+<div>
+    <label for="mole-0"></label>
+    <label for="bomb-hit" class="bomb"></label> 
+    <label for="mole-9"></label>
+</div>
+    <script>
+        let score = 0;
+        let gameActive = false;
+        let moleSpeed = 1000; // Starting speed (1 second)
+        let lastHole;
+
+        const scoreDisplay = document.getElementById('score');
+        const speedDisplay = document.getElementById('speed-display');
+        const moles = document.querySelectorAll('.mole');
+        const holes = document.querySelectorAll('.hole');
+
+        function randomHole(holes) {
+            const idx = Math.floor(Math.random() * holes.length);
+            const hole = holes[idx];
+            if (hole === lastHole) return randomHole(holes);
+            lastHole = hole;
+            return hole;
+        }
+
+        function peep() {
+            if (!gameActive) return;
+            const hole = randomHole(holes);
+            hole.classList.add('up');
+
+            setTimeout(() => {
+                hole.classList.remove('up');
+                if (gameActive) peep();
+            }, moleSpeed);
+        }
+
+        function whack(e) {
+            if(!e.isTrusted) return; // Anti-cheat
+            score++;
+            this.parentNode.classList.remove('up');
+            scoreDisplay.textContent = score;
+
+            // --- THE LOGIC: Increase speed by 10% every 5 points ---
+            if (score > 0 && score % 5 === 0) {
+                moleSpeed *= 0.9; // Shrink the time by 10%
+                let currentSpeedPct = Math.round((1000 / moleSpeed) * 100);
+                speedDisplay.textContent = currentSpeedPct + "%";
+            }
+        }
+
+        moles.forEach(mole => mole.addEventListener('click', whack));
+
+        document.getElementById('start-btn').addEventListener('click', () => {
+            score = 0;
+            moleSpeed = 1000;
+            gameActive = true;
+            scoreDisplay.textContent = 0;
+            speedDisplay.textContent = "100%";
+            peep();
+        });
+      // Create an Audio Context
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    if (type === 'hit') {
+        // High pitch "Thwack"
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    } else if (type === 'miss') {
+        // Low pitch "Buzz" for Bomb/Miss
+        oscillator.type = 'sawtooth';
+        oscillator.frequency.setValueAtTime(150, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.3);
+        gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    }
+
+    oscillator.start();
+    gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.3);
+    oscillator.stop(audioCtx.currentTime + 0.3);
+}
+
+// 2. Attach listeners to your inputs
+document.querySelectorAll('input[id^="mole"]').forEach(input => {
+    input.addEventListener('change', () => {
+        if (input.checked) playSound('hit');
+    });
+});
+
+document.querySelector('#bomb-hit').addEventListener('change', () => {
+    playSound('miss');
+});
+      document.getElementById('board').addEventListener('mousedown', (e) => {
+    // If the user clicks a DIV (the hole) but NOT a label (the mole)
+    if (e.target.tagName === 'DIV') {
+        playSound('miss');
+    }
+});
+      // 1. Setup the Audio Context
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+    // CRITICAL: This wakes up the audio if the browser put it to sleep
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+
+    const oscillator = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    if (type === 'hit') {
+        // A sharp "Thwack" sound
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.4, audioCtx.currentTime);
+    } else {
+        // A low "Bzzzt" sound for bombs or misses
+        oscillator.type = 'sawtooth';
+        oscillator.frequency.setValueAtTime(150, audioCtx.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.2);
+        gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    }
+
+    oscillator.start();
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.2);
+    oscillator.stop(audioCtx.currentTime + 0.2);
+}
+
+// 2. Listen for clicks on the Labels (the moles)
+// We use 'mousedown' because it triggers immediately when you click
+document.addEventListener('mousedown', (e) => {
+    const target = e.target;
+
+    // Did they click a mole label?
+    if (target.tagName === 'LABEL' && target.getAttribute('for').includes('mole')) {
+        playSound('hit');
+    } 
+    // Did they click a bomb label?
+    else if (target.tagName === 'LABEL' && target.getAttribute('for') === 'bomb-hit') {
+        playSound('miss');
+    }
+    // Did they click the board (the brown dirt) but miss the mole?
+    else if (target.closest('#board') && target.tagName === 'DIV') {
+        playSound('miss');
+    }
+});
+    </script>
+    </body>
+</html>

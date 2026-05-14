@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Instructions</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Noto+Sans+SC:wght@100..900&family=Share+Tech&display=swap"
+            rel="stylesheet" />
+        <style>
+            body {
+                background: #2a7b9b;
+                background: linear-gradient(
+                    90deg,
+                    rgba(42, 123, 155, 1) 0%,
+                    rgba(87, 199, 133, 1) 50%,
+                    rgba(237, 221, 83, 1) 100%
+                );
+                h1 {
+                    color: #FF5733; text-shadow: 2px 2px 4px #000000;
+                    text-align: center;     
+                }
+                h2 {
+                    color: rgba(237, 221, 83, 1);
+                }
+                h3 {
+                    color: #11d029;
+                }
+                p {
+                    font-family: "Share Tech", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lesson Title: Leveling Up: AI-Assisted Game Development</h1>
+        <h2>
+            Objective: Students will act as Lead Developers, using an AI assistant to refactor, debug, and add new
+            features to existing, functional (but basic) game code.
+        </h2>
+        <h3>Duration: 1 week</h3>
+
+        <h4>
+            Part 1: The Golden Rules of AI Pair Programming (10-15 mins) Be Specific: Instead of saying "make the game
+            cooler," tell them to ask, "How do I add a particle explosion effect in JavaScript when the user scores a
+            point?" One Thing at a Time: Ask the AI to add one feature or fix one bug per prompt. Read Before You Paste:
+            You must understand what the AI's code does before copying it into your project. If you don't know, ask the
+            AI to explain it!
+        </h4>
+        <h4>Part 2: The Enhancement Challenges (40-60 mins)</h4>
+
+        <h4>
+            Game 1: Rock, Paper, Scissors (Beginner Focus: UI & Logic Expansions) The baseline code should just be a
+            simple text or basic button-based game that outputs "Win, Lose, or Tie."
+        </h4>
+        <p>
+            Quest 1 (Tracking): Prompt the AI to add a running scoreboard that tracks Player Wins, Computer Wins, and
+            Ties using localStorage so the score saves if the page refreshes.
+        </p>
+        <p>
+            Quest 2 (UI/UX): Ask the AI for CSS and JavaScript to add animations (e.g., shaking hands before revealing
+            the choice).
+        </p>
+        <p>
+            Quest 3 (Game Logic Expansion): Ask the AI to help rewrite the game logic to include "Rock, Paper, Scissors,
+            Lizard, Spock."
+        </p>
+
+        <h4>
+            Game 2: Mole Mash (Intermediate Focus: Timing & Mechanics) The baseline code should be a grid where a "mole"
+            (a color block or image) randomly jumps from square to square every second, and clicking it gives a point.
+        </h4>
+
+        <p>
+            Quest 1 (Dynamic Difficulty): Prompt the AI to modify the setInterval logic so that every time the player's
+            score increases by 5, the mole moves 10% faster.
+        </p>
+        <p>
+            Quest 2 (Punishment Mechanics): Ask the AI to help add a "decoy" mole (like a bomb or a bunny). If the user
+            clicks the decoy instead of the mole, they lose points or lose the game.
+        </p>
+        <p>
+            Quest 3 (Juice): Ask the AI how to add sound effects—one sound for hitting the mole, and an "aww" sound for
+            missing.
+        </p>
+
+        <h4>
+            Game 3:Chess (Advanced Focus: Algorithms & Complex Logic) The baseline code should be a visual chessboard
+            that simply allows pieces to be dragged and dropped, but maybe lacks strict rules or an opponent. (Note:
+            Writing a chess engine from scratch is incredibly hard, so rely heavily on AI here).
+        </h4>
+
+        <p>
+            Quest 1 (Move Validation): Pick one piece (like the Knight or Pawn). Prompt the AI to write a function that
+            highlights the valid squares that piece can move to when clicked.
+        </p>
+        <p>
+            Quest 2 (Move History): Ask the AI to build a side panel that records standard algebraic notation (e.g., e4,
+            Nf3) for every move made.
+        </p>
+
+        <p>
+            Quest 3 (The AI Opponent): Prompt the AI to integrate a basic "random move" generator for the black pieces,
+            and then step it up by asking the AI to implement a simple Minimax algorithm so the computer actually tries
+            to win.
+        </p>
+
+        <h4>
+            Game 4: Tic Tac Toe (Beginner/Intermediate Focus: Logic & Themes) The baseline code should be a simple 3x3
+            grid where two players can click to place an "X" or an "O", and maybe an alert pops up when someone wins.
+        </h4>
+        <p>
+            Quest 1 (The Winning Line): Prompt the AI to write CSS and JavaScript that draws a physical line (or
+            highlights the boxes) across the winning row, column, or diagonal when the game ends.
+        </p>
+        <p>
+            Quest 2 (Themed Sprites): Instead of text"X" and "O", ask the AI how to replace the text with emojis or
+            image files (e.g., "Pirates vs. Ninjas" or "Cats vs. Dogs").
+        </p>
+        <p>
+            Quest 3 (The Unbeatable Opponent): Have students ask the AI to write a single-player mode using the Minimax
+            algorithm. The AI will explain how to make it mathematically impossible for the human to win!
+        </p>
+
+        <h4>
+            Project 5: The Animated Image (Focus: CSS Animations & Interaction) The baseline code for this isn't a
+            traditional game, but rather a static image or shape on a webpage. This is a great exercise for students to
+            learn how AI can write complex CSS and math for visual effects.
+        </h4>
+        <p>
+            Quest 1 (Advanced Hover Effects): Prompt the AI to write complex CSS keyframe animations. For example, ask
+            it to make the image do a "glitch" effect, a 3D coin flip, or a heartbeat pulse when the mouse hovers over
+            it.
+        </p>
+        <p>
+            Quest 2 (Mouse Tracking): Ask the AI for JavaScript that makes the image physically interact with the
+            mouse—for example, making the image "run away" from the cursor so it can't be clicked, or making a
+            character's eyes follow the cursor around the screen.
+        </p>
+        <p>
+            Quest 3 (Particle Systems): Ask the AI to write a script that generates a trail of particles (like sparkles,
+            fire, or bubbles) that follow the image as it moves across the screen.
+        </p>
+        <h4>
+            Game 6: Connect 4 (Intermediate/Advanced Focus: 2D Arrays & Physics) The baseline code should be a 7x6 grid
+            where clicking a column makes a red or yellow circle appear in the lowest empty slot.
+        </h4>
+
+        <p>
+            Quest 1 (Gravity Animation): Connect 4 pieces shouldn't just appear; they should drop! Prompt the AI to
+            write an animation so the piece falls from the top of the board down into its slot.
+        </p>
+        <p>
+            Quest 2 (Diagonal Win Detection): Checking for horizontal and vertical wins is straightforward, but diagonal
+            checks are notoriously tricky for students. Have them prompt the AI to explain and write the logic for
+            detecting four-in-a-row diagonally.
+        </p>
+        <p>
+            Quest 3 (The Board Reset): Ask the AI to add a "Reset" button that triggers an animation where all the
+            pieces drop out the bottom of the board and fade away, rather than just instantly clearing the screen.
+        </p>
+
+        <h4>
+            The Final Boss: "Frankenstein's Game" (Create/Find & Enhance) This is the ultimate test of their
+            AI-collaboration skills. They must step out of the provided templates and work with wild code. The Setup:
+            Students must either use AI to generate the baseline code for a simple game from scratch (like Snake, Pong,
+            or Flappy Bird) OR find open-source code for a basic game on a site like CodePen. The Quests:
+        </h4>
+        <p>
+            Quest 1 (Code Comprehension): Before changing anything, they must paste the code into the AI and ask,
+            "Explain how the main game loop and collision detection work in this code." They must be able to summarize
+            it to you.
+        </p>
+        <p>
+            Quest 2 (The Mutation): They must prompt the AI to add at least two entirely new mechanics that change how
+            the game is played. (Examples: Adding a "dash" ability to Pong, adding teleporters to Snake, or adding
+            gravity-reversing portals to Flappy Bird).
+        </p>
+
+        <p>
+            Quest 3 (Persistent High Scores): Have them work with the AI to implement localStorage so their custom game
+            remembers the highest score even after the browser is closed.
+        </p>
+
+        <h4>
+            Part 3: Code Review & Reflection (15 mins) Have students pair up and look at each other's enhanced games.
+            Ask them to reflect on: What was the exact prompt you used that gave you the best result? Did the AI ever
+            give you broken code? How did you fix it? What programming languages or platforms (like vanilla HTML/CSS/JS,
+            Python, or Scratch) are the baseline games written in so I can help you draft the starter code for your
+            students?
+        </h4>
+    </body>
+</html>
