@@ -1,0 +1,53 @@
+h1 {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+    border: double;
+}
+body {
+    background-color: #0d5eaf;
+    color: white;
+    margin-right: auto;
+}
+p {
+    color: white;
+}
+
+.box {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: auto;
+    border: double;
+}
+table {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: auto;
+    border: double;
+}
+th {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: auto;
+    border: double;
+}
+td {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: auto;
+    border: double;
+}
+.images {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px; /* Optional: adjust width as needed */
+}
